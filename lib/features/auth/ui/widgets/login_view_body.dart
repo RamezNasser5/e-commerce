@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/router/app_router.dart';
 import 'package:e_commerce/core/utils/consts.dart';
 import 'package:e_commerce/core/widgets/back_button.dart';
+import 'package:e_commerce/features/auth/ui/widgets/login_view_components.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -9,14 +10,14 @@ class LoginViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: authPrimaryColor,
-      appBar: AppBar(
         backgroundColor: authPrimaryColor,
-        leading: const GoBackButton(
-          icon: Icons.arrow_back_ios,
-          route: AppRouter.initialRoute,
+        appBar: AppBar(
+          backgroundColor: authPrimaryColor,
+          leading: const GoBackButton(
+            icon: Icons.arrow_back_ios,
+            route: AppRouter.initialRoute,
+          ),
         ),
-      ),
-    );
+        body: const LoginViewComponents());
   }
 }
