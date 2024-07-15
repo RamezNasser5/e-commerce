@@ -1,6 +1,7 @@
 import 'package:e_commerce/features/auth/data/repo/auth_repo.dart';
 import 'package:e_commerce/features/auth/logic/blocs/auth_bloc/auth_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthRepoImpl implements AuthRepo {
@@ -15,7 +16,9 @@ class AuthRepoImpl implements AuthRepo {
         email: event.email,
         password: event.password,
       );
+      emit(AuthLoginSuccess());
     } catch (e) {
+      debugPrint('Signup Error: $e');
       emit(AuthLoginFailure(message: e.toString()));
     }
   }
@@ -30,7 +33,9 @@ class AuthRepoImpl implements AuthRepo {
         email: event.email,
         password: event.password,
       );
+      emit(AuthSignupSuccess());
     } catch (e) {
+      debugPrint('Signup Error: $e');
       emit(AuthSignupFailure(message: e.toString()));
     }
   }

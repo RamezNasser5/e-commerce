@@ -8,12 +8,14 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthRepoImpl authRepoImpl = AuthRepoImpl();
   AuthBloc() : super(AuthInitial()) {
-    on<AuthEvent>((event, emit) {
-      if (event is AuthLoginEvent) {
-        authRepoImpl.signin(emit: emit, event: event);
-      } else if (event is AuthSignupEvent) {
-        authRepoImpl.signup(emit: emit, event: event);
-      }
-    });
+    on<AuthEvent>(
+      (event, emit) async {
+        if (event is AuthLoginEvent) {
+          await authRepoImpl.signin(emit: emit, event: event);
+        } else if (event is AuthSignupEvent) {
+          await authRepoImpl.signup(emit: emit, event: event);
+        }
+      },
+    );
   }
 }

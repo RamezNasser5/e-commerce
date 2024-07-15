@@ -7,10 +7,12 @@ class CustomAuthButton extends StatelessWidget {
     super.key,
     required this.labelText,
     required this.onPressed,
+    required this.isLoading,
   });
 
   final String labelText;
   final void Function()? onPressed;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,12 @@ class CustomAuthButton extends StatelessWidget {
           ),
         ),
       ),
-      child: Text(
-        labelText,
-        style: AppStyles.metropolisMedium14,
-      ),
+      child: isLoading
+          ? const CircularProgressIndicator()
+          : Text(
+              labelText,
+              style: AppStyles.metropolisMedium14,
+            ),
     );
   }
 }
