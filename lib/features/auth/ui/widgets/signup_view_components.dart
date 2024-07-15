@@ -8,8 +8,8 @@ import 'package:e_commerce/features/auth/ui/widgets/social_account_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginViewComponents extends StatelessWidget {
-  const LoginViewComponents({super.key});
+class SignUpViewComponents extends StatelessWidget {
+  const SignUpViewComponents({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,17 @@ class LoginViewComponents extends StatelessWidget {
               height: 20,
             ),
             const Text(
-              'Login',
+              'Sign Up',
               style: AppStyles.metropolisBold34,
             ),
             const SizedBox(
               height: 64,
+            ),
+            const CustomAuthTextField(
+              labelText: 'Name',
+            ),
+            const SizedBox(
+              height: 20,
             ),
             const CustomAuthTextField(
               labelText: 'Email',
@@ -41,11 +47,11 @@ class LoginViewComponents extends StatelessWidget {
               labelText: 'Password',
             ),
             LoginOrSignUpNavigation(
-              onTap: () => GoRouter.of(context).go(AppRouter.signupRoute),
-              message: 'Don\'t have an account?',
+              onTap: () => GoRouter.of(context).go(AppRouter.loginRoute),
+              message: 'Do have an account?',
             ),
             const CustomAuthButton(
-              labelText: 'Login',
+              labelText: 'Sign Up',
             ),
             const AuthSocialAccountHelper(),
             const SocialAccountIcons(),

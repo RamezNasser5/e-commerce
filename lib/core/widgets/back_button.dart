@@ -15,7 +15,7 @@ class GoBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(icon),
-      onPressed: () => GoRouter.of(context).go(
+      onPressed: () => GoRouter.of(context).push(
         route,
       ),
     );

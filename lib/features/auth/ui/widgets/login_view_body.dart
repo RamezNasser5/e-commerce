@@ -10,14 +10,15 @@ class LoginViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: authPrimaryColor,
+      appBar: AppBar(
         backgroundColor: authPrimaryColor,
-        appBar: AppBar(
-          backgroundColor: authPrimaryColor,
-          leading: const GoBackButton(
-            icon: Icons.arrow_back_ios,
-            route: AppRouter.initialRoute,
-          ),
+        leading: const GoBackButton(
+          icon: Icons.arrow_back_ios,
+          route: AppRouter.initialRoute,
         ),
-        body: const LoginViewComponents());
+      ),
+      body: const LoginViewComponents(),
+    );
   }
 }

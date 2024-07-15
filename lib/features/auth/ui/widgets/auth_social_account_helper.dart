@@ -10,11 +10,11 @@ class AuthSocialAccountHelper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: MediaQuery.sizeOf(context).width * 0.2,
+        left: MediaQuery.sizeOf(context).width * 0.3,
         top: MediaQuery.sizeOf(context).height * 0.2,
       ),
       child: Text(
-        'or login with social account',
+        'or continue with',
         style: AppStyles.metropolisMedium14.copyWith(
           color: Colors.black,
         ),
