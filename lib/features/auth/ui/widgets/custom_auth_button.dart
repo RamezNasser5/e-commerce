@@ -6,14 +6,16 @@ class CustomAuthButton extends StatelessWidget {
   const CustomAuthButton({
     super.key,
     required this.labelText,
+    required this.onPressed,
   });
 
   final String labelText;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: authButtonColor,
         minimumSize: WidgetStatePropertyAll(
